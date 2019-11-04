@@ -7,7 +7,7 @@ for i in range (0,4):
     randigit = random.randint (0,9)
     fourdigit.append (randigit)
 
-
+print("Hello")
 str(fourdigit)
 
 # guessing the number
