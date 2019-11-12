@@ -1,4 +1,5 @@
-userinput2 = input("Do you want to play? y/n")
+(userinput2) = input("Do you want to play? y/n")
+
 while (userinput2) == ("y"):
     if (userinput2) == ("n"):
         break
@@ -11,55 +12,58 @@ while (userinput2) == ("y"):
     print ("Guess a four digit number. You will be notified if each digit is either correct or incorrect. Then, you will be notified how many digits are correct but in the wrong spot. You will have 4 chances to guess.")
     for i in range (0,4):
         randigit = random.randint (0,9)
-        fourdigit.append (randigit)
-
+        fourdigit.append (str(randigit))
+    print(fourdigit)
 
     str(fourdigit)
 
     # guessing the number
     for i in range (0,10):
-        userinput1 = input("what is your guess: ")
+        (userinput1) = input("what is your guess: ")
 
         # separating each digit in the guess
         str(userinput1)
         guess = list(userinput1)
+        print(guess)
         noright = 0
 
-        if (guess[:0]) in (fourdigit[:0]):
+        if (guess[0]) == (fourdigit[0]):
             print ("yes the first digit is correct")
             noright += 1
 
-        if (guess[:1]) in (fourdigit[:1]):
+        if (guess[1]) == (fourdigit[1]):
             print ("yes the second digit is correct")
             noright += 1
 
-        if (guess[:2]) in (fourdigit[:2]):
+        if (guess[2]) == (fourdigit[2]):
             print ("yes the third digit is correct")
             noright += 1
 
-        if (guess[:3]) in (fourdigit[:3]):
+        if (guess[3]) == (fourdigit[3]):
             print ("yes the fourth digit is correct")
             noright += 1
 
-        if (noright) == (0):
+        elif (noright) == (0):
             print ("No digits were correct")
 
         #     how many are correct but in wrong spot
         numright = 0
 
-        if (guess[:1]) in (fourdigit):
-            numright.add (1)
-        if (guess[:2]) in (fourdigit):
-            numright.add (1)
-        if (guess[:3]) in (fourdigit):
-            numright.add (1)
-        if (guess[:4]) in (fourdigit):
-            numright.add (1)
+
+        if (guess[0]) in (fourdigit):
+            numright += 1
+        if (guess[1]) in (fourdigit):
+            numright += 1
+        if (guess[2]) in (fourdigit):
+            numright += 1
+        if (guess[3]) in (fourdigit):
+            numright += 1
 
         str(numright)
 
 
         print ("The number of digits you guessed which were correct but in the wrong spot is:")
+        numright -= noright
         print (numright)
 
 
