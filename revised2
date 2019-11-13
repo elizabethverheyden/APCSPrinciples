@@ -1,0 +1,105 @@
+userinput2 = input ("Do you want to play? y/n")
+
+while (userinput2) == ("y"):
+    if (userinput2) == ("n"):
+        break
+
+
+    fourdigit = []
+    import random
+
+    #instructions
+    print ("Guess a four digit number. You will be notified if each digit is either correct or incorrect.")
+    print ("Then, you will be notified how many digits are correct but in the wrong spot. You will have 10 chances to guess.")
+    for i in range (0,4):
+        randigit = random.randint (0,9)
+        fourdigit.append (str(randigit))
+
+    print (fourdigit)
+
+    # guessing the number
+    for i in range (0,10):
+
+        userinput1 = input ("what is your guess: ")
+
+        # separating each digit in the guess
+        guess = list(userinput1)
+
+
+        userprogress = ["_","_","_","_"]
+
+        if (guess[0]) == (fourdigit[0]):
+            userprogress.remove (userprogress[0])
+            userprogress.append (guess[0])
+
+        if (guess[1]) == (fourdigit[1]):
+            del userprogress[1]
+            userprogress.insert (1, guess[1])
+
+        if (guess[2]) == (fourdigit[2]):
+            userprogress.remove (userprogress[2])
+            userprogress.append (guess[2])
+
+        if (guess[3]) == (fourdigit[3]):
+            userprogress.remove (userprogress[3])
+            userprogress.append (guess[3])
+
+        print("Your current progress:")
+        print (userprogress)
+
+        #     how many are correct but in wrong spot
+        numright = 0
+
+
+        if (guess[0]) in (fourdigit):
+            # and doesnt' equal the specific index
+            numright += 1
+        if (guess[1]) in (fourdigit):
+            numright += 1
+        if (guess[2]) in (fourdigit):
+            numright += 1
+        if (guess[3]) in (fourdigit):
+            numright += 1
+
+        str(numright)
+
+
+        print ("Total number of digits which are correct but may be in the wrong spot:")
+        print (numright)
+
+
+    print ("Thanks for playing. The Correct number was:")
+    print (fourdigit)
+
+    userinput2 = input("Do you want to play again? Y/N")
+
+
+        # indivdigit = 0
+        #set indivdigit var to the first digit (inndex 0) from userinput
+        #check if indivdig is in four digit
+        #output
+        #change indivdig to index 1
+
+
+
+
+
+
+        #looping through to check if each digit is in fourdigit
+         # for i in range (0,4):
+         #     if fourdigit in userinput1:
+         #         print("correct")
+         #     else:
+         #         print ("all digits were wrong")
+
+
+
+
+
+
+
+
+
+
+
+
