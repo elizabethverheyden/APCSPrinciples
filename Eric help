@@ -5,6 +5,10 @@ while (userinput2) == ("y"):
     if (userinput2) == ("n"):
         break
 
+    # making it unbreakable so you can't enter things other than a y or n
+    if (userinput2) != ("y") or ("n"):
+        raise Exception("you must enter your answer as either a y or n")
+
 
     fourdigit = []
     import random
