@@ -1,0 +1,126 @@
+import random
+
+while True:
+    userinput2 = input("Do you want to play? y/n")
+    userinput2 = userinput2.lower()
+    if userinput2 == 'y' or userinput2 == 'n':
+        break
+    print("Please enter Y or N")
+
+while (userinput2) == ("y"):
+    if (userinput2) == ("n"):
+        break
+
+    # making it unbreakable so you can't enter things other than a y or n
+  #  if (userinput2) != ("y") or ("n"):
+   #     raise Exception("you must enter your answer as either a y or n")
+
+    fourdigit = []
+
+    # instructions
+    print("Guess a four digit number. You will be notified if each digit is either correct or incorrect.")
+    print("Then, you will be notified how many digits are correct but in the wrong spot. You will have 6 chances to guess.")
+    for i in range(0, 4):
+        randigit = random.randint(0, 9)
+        fourdigit.append(str(randigit))
+
+
+    # guessing the number
+    for i in range(0, 6):
+
+        while True:
+            userinput1 = input("what is your guess: ")
+            if len(userinput1) == 4:
+                break
+            print("Please enter a 4 digit number")
+
+        if list(userinput1) == [fourdigit[0], fourdigit[1], fourdigit[2], fourdigit[3]]:
+            print("Congrats! You guessed it.")
+            break
+
+        # separating each digit in the guess
+        guess = list(userinput1)
+        checklist = [fourdigit[0], fourdigit[1], fourdigit[2], fourdigit[3]]
+
+        userprogress = ["_", "_", "_", "_"]
+
+        if (guess[0]) == (fourdigit[0]):
+            del userprogress[0]
+            userprogress.insert(0, guess[0])
+            del checklist[0]
+            checklist.insert(0, "")
+
+        if (guess[1]) == (fourdigit[1]):
+            del userprogress[1]
+            userprogress.insert(1, guess[1])
+            del checklist[1]
+            checklist.insert(1, "")
+
+        if (guess[2]) == (fourdigit[2]):
+            del userprogress[2]
+            userprogress.insert(2, guess[2])
+            del checklist[2]
+            checklist.insert(2, "")
+
+        if (guess[3]) == (fourdigit[3]):
+            del userprogress[3]
+            userprogress.insert(3, guess[3])
+            del checklist[3]
+            checklist.insert(3, "")
+
+        print("Your current progress: " + str(userprogress))
+
+        #     how many are correct but in wrong spot
+        numright = 0
+
+        if (guess[0]) in (checklist):
+            if (guess[0]) != (fourdigit[0]):
+                # and doesnt' equal the specific index
+                numright += 1
+        if (guess[1]) in (checklist):
+            if (guess[1]) != (fourdigit[1]):
+                numright += 1
+        if (guess[2]) in (checklist):
+            if (guess[2]) != (fourdigit[2]):
+                numright += 1
+        if (guess[3]) in (checklist):
+            if (guess[3]) != (fourdigit[3]):
+                numright += 1
+
+        # repeating numbers in guess
+        print("Total number of digits which are correct but is in the wrong spot: " + str(numright))
+
+    print("Thanks for playing. The Correct number was:")
+    print(fourdigit)
+
+    while True:
+        userinput2 = input("Do you want to play again? Y/N")
+        userinput2 = userinput2.lower()
+        if userinput2 == 'y' or userinput2 == 'n':
+            break
+        print("Please Enter Y or N")
+
+    # indivdigit = 0
+    # set indivdigit var to the first digit (inndex 0) from userinput
+    # check if indivdig is in four digit
+    # output
+    # change indivdig to index 1
+
+    # looping through to check if each digit is in fourdigit
+    # for i in range (0,4):
+    #     if fourdigit in userinput1:
+    #         print("correct")
+    #     else:
+    #         print ("all digits were wrong")
+
+
+
+
+
+
+
+
+
+
+
+
